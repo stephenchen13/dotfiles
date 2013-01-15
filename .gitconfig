@@ -1,0 +1,21 @@
+[user]
+	name = Stephen Chen
+	email = stephenchen13@gmail.com
+[core]
+	excludesfile = /Users/stephenchen/.gitignore_global
+  editor = vim -f
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    amend = commit --amend
+    aa = add --all
+    noff = merge --no-ff
+    pom = push origin master
+    who = shortlog -s --
+    pr = pull --rebase
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[github]
+	user = stephenchen13

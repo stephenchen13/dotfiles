@@ -1,0 +1,52 @@
+color solarized
+
+set t_Co=256
+set scrolloff=999
+
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right scroll
+set guioptions-=l "remove left scroll
+set guioptions-=L "remove left scroll (NERDTree)
+
+"#### CTRL-P ####
+" Set the minimum max files, otherwise some files will not be indexed
+let g:ctrlp_max_files = 50000 "default is 10000
+" Sets the working directory to the pwd
+let g:ctrlp_working_path_mode = 0
+" Ignores files, which is then honored by ctrl-p plugin
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+"#####################
+"#### NERDTREE ####
+"#####################
+" Sets NERDTREE to pwd
+noremap <Leader>N :execute "NERDTreeCWD"<cr>
+" Will uncollapse NerdTree to current file
+noremap <Leader>f :execute "NERDTreeFind"<cr>
+
+"#####################
+"#### Regular Vim ####
+"#####################
+
+" Disable word wrap
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+
+set nohls
+
+" Open up splits to the right
+set splitright
+
+" Remove all trailing whitespaces when saving code files
+autocmd BufWritePre *.coffee,*.hamlc,*.haml,*.sass,*.rb :%s/\s\+$//e
+" Sets hamlc to haml format
+au BufRead,BufNewFile *.hamlc,*.hamlc.erb set ft=haml
+
+" Move forward/backward in the error list window
+map <F2> :cp<CR>
+map <F3> :cn<CR>
+
+" For autocompletion behavior consistent with terminal
+set wildmode=longest,list
+set wildmenu
